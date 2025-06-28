@@ -1,0 +1,25 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://prajwal:Pr%40jwal0911@cluster0.gn0gwbi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      database: journaldb
+      auto-index-creation: true
+  main:
+    allow-circular-reference: true
+  server:
+    port: 8080
+
+logging:
+  level:
+    org:
+      springframwork:
+        data:
+          mongodb:
+            core:
+              Mongotemplate: DEBUG
+      mongodb:
+        driver: DEBUG
+
+
+
+
