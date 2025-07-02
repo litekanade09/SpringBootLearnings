@@ -18,6 +18,7 @@ public class JournalEntryService {
     @Autowired
     private UserService userSerive;
 
+
     @Transactional
     public void SaveEntry(JournalEntry journalEntry, String username){
         try{

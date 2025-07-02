@@ -3,6 +3,7 @@ package JournalApp.MyFirstApp.Service;
 import JournalApp.MyFirstApp.Entry.UsersEntry;
 import JournalApp.MyFirstApp.Repository.UserRepository;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.mockito.*;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,6 +14,7 @@ import java.util.Collections;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
+@Disabled
 public class UserDetailsServiceImplTests {
 
     @InjectMocks

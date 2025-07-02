@@ -3,6 +3,8 @@ package JournalApp.MyFirstApp.Service;
 import JournalApp.MyFirstApp.Entry.UsersEntry;
 import JournalApp.MyFirstApp.Repository.UserRepository;
 import org.bson.types.ObjectId;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -17,10 +19,19 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
     private static final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-    public void SaveNewUser(UsersEntry Users){
-        Users.setPassword(passwordEncoder.encode(Users.getPassword()));
-        Users.setRoles(Arrays.asList("User"));
-        userRepository.save(Users);
+
+    private static final Logger logger = LoggerFactory.getLogger(UserService.class);
+
+    public boolean SaveNewUser(UsersEntry Users){
+        try{
+            Users.setPassword(passwordEncoder.encode(Users.getPassword()));
+            Users.setRoles(Arrays.asList("User"));
+            userRepository.save(Users);
+            return true;
+        }catch (Exception e){
+            logger.info("JUDEEEEE");
+            return false;
+        }
     }
     public void SaveAdmin(UsersEntry Users){
         Users.setPassword(passwordEncoder.encode(Users.getPassword()));
