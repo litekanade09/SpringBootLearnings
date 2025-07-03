@@ -11,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
 
 @Component
 public class WeatherService {
-    private static final String apikey="5b313aa12b8b4b6e8af152549250207";
+    private static final String apikey="";
 
     private RestTemplate restTemplate;
 
